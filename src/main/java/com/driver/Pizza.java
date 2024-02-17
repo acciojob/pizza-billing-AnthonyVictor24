@@ -9,11 +9,11 @@ public class Pizza {
     private String bill;
     int countCheese = 0;
     int countToppings = 0;
+    int vegPrice = 0;
+    int Non_vegPrice = 0;
 
 
     Scanner sc = new Scanner(System.in);
-    int vegPrice = 0;
-    int Non_vegPrice = 0;
     boolean addExtraCheese = true;
     boolean addExtraTopping = true;
     boolean isTakeaway = true;
@@ -63,10 +63,9 @@ public class Pizza {
 
         if(this.countCheese==0){
             this.price+=80;
-            addExtraCheese = false;
             countCheese++;
         }
-
+        addExtraCheese = false;
         mainMenu();
     }
 
@@ -95,44 +94,55 @@ public class Pizza {
         mainMenu();
     }
 
-//    public String getBill(){
-//        // your code goes here
-////        System.out.println("Base Price Of The Pizza: "+vegPrice);
-////       if(!addExtraCheese){
-////           System.out.println("Extra Cheese Added: 80");
-////       }
-////       if(isVeg && !addExtraTopping){
-////           System.out.println("Extra Toppings Added: 70");
-////       }else if(!isVeg && !addExtraTopping){
-////           System.out.println("Extra Toppings Added: 120");
-////       }
-////       if(!isTakeaway){
-////           System.out.println("Paperbag Added: 20");
-////       }
-////        System.out.println("Total Price: "+price);
-//        return this.bill;
-//    }
-
-    public void bill(){
+    public String getBill(){
+        // your code goes here
+        StringBuilder sb = new StringBuilder();
         if(isVeg){
-            System.out.println("Base Price Of The Pizza: "+vegPrice);
+            sb.append("Base Price Of The Pizza: ").append(vegPrice).append("\n");
         }else{
-            System.out.println("Base Price Of The Pizza: "+Non_vegPrice);
+            sb.append("Base Price Of The Pizza: ").append(Non_vegPrice).append("\n");
+
         }
 
         if(!addExtraCheese){
-            System.out.println("Extra Cheese Added: 80");
+            sb.append("Extra Cheese Added: 80\n");
         }
+
         if(isVeg && !addExtraTopping){
-            System.out.println("Extra Toppings Added: 70");
+            sb.append("Extra Toppings Added: 70\n");
         }else if(!isVeg && !addExtraTopping){
-            System.out.println("Extra Toppings Added: 120");
+            sb.append("Extra Toppings Added: 120\n");
         }
+
         if(!isTakeaway){
-            System.out.println("Paperbag Added: 20");
+            sb.append("Extra Toppings Added: 20\n");
         }
-        System.out.println("Total Price: "+price);
+
+        sb.append("Total Price: ").append(price);
+
+        return sb.toString();
     }
+
+//    public void bill(){
+//        if(isVeg){
+//            System.out.println("Base Price Of The Pizza: "+vegPrice);
+//        }else{
+//            System.out.println("Base Price Of The Pizza: "+Non_vegPrice);
+//        }
+//
+//        if(!addExtraCheese){
+//            System.out.println("Extra Cheese Added: 80");
+//        }
+//        if(isVeg && !addExtraTopping){
+//            System.out.println("Extra Toppings Added: 70");
+//        }else if(!isVeg && !addExtraTopping){
+//            System.out.println("Extra Toppings Added: 120");
+//        }
+//        if(!isTakeaway){
+//            System.out.println("Paperbag Added: 20");
+//        }
+//        System.out.println("Total Price: "+price);
+//    }
 
 }
 
