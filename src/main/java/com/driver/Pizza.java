@@ -175,7 +175,7 @@ public class Pizza {
 //            addExtraCheese = false;
 //        }
         if(addExtraCheese == true){
-            System.out.println("chessee");
+//            System.out.println("chessee");
             totalPrice+=80;
             addExtraCheese=false;
         }
@@ -203,7 +203,7 @@ public class Pizza {
     public void addTakeaway(){
         if(isTakeaway == true){
             this.totalPrice+=20;
-            System.out.println("take");
+//            System.out.println("take");
             isTakeaway=false;
         }
     }

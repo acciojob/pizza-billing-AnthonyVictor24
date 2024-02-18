@@ -32,13 +32,19 @@ public class Main {
     dp.addTakeaway();
     dp.addExtraCheese();
     dp.addTakeaway();
+    dp.addExtraCheese();
+    dp.addExtraToppings();
 
     System.out.println(dp.getBill());
-//
+
     Pizza p = new Pizza(false);
     p.addExtraCheese();
     p.addExtraToppings();
+    p.addExtraCheese();
+    p.addExtraCheese();
     p.addTakeaway();
+    p.addExtraToppings();
+    p.addExtraToppings();
     System.out.println(p.getBill());
 
   }
