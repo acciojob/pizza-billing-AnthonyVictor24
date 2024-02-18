@@ -135,7 +135,7 @@ public class Pizza {
     boolean addExtraCheese;
     boolean addExtraTopping;
     boolean isTakeaway;
-    boolean isDeluxe = true;
+//    boolean isDeluxe = true;
 
 
     public Pizza(Boolean isVeg){
@@ -162,17 +162,17 @@ public class Pizza {
         if(addExtraCheese == true){
             totalPrice+=80;
             addExtraCheese=false;
-            isDeluxe = false;
+//            isDeluxe = false;
         }
     }
 
     public void addExtraToppings(){
         if(addExtraTopping==true && isVeg==true){
             this.totalPrice+=70;
-            isDeluxe = false;
+//            isDeluxe = false;
         }else if(addExtraTopping==true && isVeg==false){
             this.totalPrice+=120;
-            isDeluxe = false;
+//            isDeluxe = false;
         }
         addExtraTopping=false;
 
@@ -195,11 +195,11 @@ public class Pizza {
 
         }
 
-        if(!addExtraCheese && isDeluxe == false){
+        if(!addExtraCheese){
             sb.append("Extra Cheese Added: 80\n");
         }
 
-        if(isVeg && !addExtraTopping && isDeluxe == false){
+        if(isVeg && !addExtraTopping ){
             sb.append("Extra Toppings Added: 70\n");
         }else if(!isVeg && !addExtraTopping){
             sb.append("Extra Toppings Added: 120\n");

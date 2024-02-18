@@ -45,10 +45,10 @@ public class Main {
     p.addExtraCheese();
     System.out.println(p.getBill());
 
-//    DeluxePizza dp2 = new DeluxePizza(false);
-//    dp2.addExtraCheese();
-//    dp2.addExtraToppings();
-//    System.out.println(dp2.getBill());
+    DeluxePizza dp2 = new DeluxePizza(false);
+    dp2.addExtraCheese();
+    dp2.addExtraToppings();
+    System.out.println(dp2.getBill());
   }
 }
 
