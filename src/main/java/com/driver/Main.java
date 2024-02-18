@@ -31,6 +31,12 @@ public class Main {
     p2.addTakeaway();
     System.out.println(p2.getBill());
 
+    Pizza p3 = new Pizza(true);
+//    p2.addExtraCheese();
+    p3.addExtraToppings();
+   p3.addExtraCheese();
+    System.out.println(p3.getBill());
+
   }
 }
 
