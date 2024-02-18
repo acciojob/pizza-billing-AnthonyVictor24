@@ -124,7 +124,9 @@ public class Pizza {
 //    }
 
 
-//---------------------------------According to accio----------------------//
+//---------------------------------According to accio--------------------------------//
+//*********************************Accio***********************************************
+
 
     private int price;
     private Boolean isVeg;
@@ -137,7 +139,7 @@ public class Pizza {
     boolean isTakeaway;
 
 
-    public Pizza(int price,Boolean isVeg){
+    public Pizza(Boolean isVeg){
 //        this.isVeg = isVeg;
 //        // your code goes here
 //        if(isVeg==true){
@@ -147,15 +149,23 @@ public class Pizza {
 //            this.price = 400;
 //            Non_vegPrice = this.price;
 //        }
-        this.price = price;
         this.isVeg = isVeg;
+        if(isVeg==true){
+            this.price = 300;
+            totalPrice = this.price;
+        }else if(isVeg == false) {
+            this.price = 400;
+            totalPrice = this.price;
+        }
         addExtraCheese = true;
         addExtraTopping = true;
         isTakeaway=true;
         this.totalPrice = price;
+//        System.out.println(totalPrice);
     }
 
     public int getPrice(){
+
         return this.price;
     }
 
@@ -165,6 +175,7 @@ public class Pizza {
 //            addExtraCheese = false;
 //        }
         if(addExtraCheese == true){
+            System.out.println("chessee");
             totalPrice+=80;
             addExtraCheese=false;
         }
@@ -192,6 +203,7 @@ public class Pizza {
     public void addTakeaway(){
         if(isTakeaway == true){
             this.totalPrice+=20;
+            System.out.println("take");
             isTakeaway=false;
         }
     }
@@ -220,7 +232,7 @@ public class Pizza {
             sb.append("Paperbag Added: 20\n");
         }
 
-        sb.append("Total Price: ").append(totalPrice);
+        sb.append("Total Price: ").append(totalPrice).append("\n");
 
         return sb.toString();
     }

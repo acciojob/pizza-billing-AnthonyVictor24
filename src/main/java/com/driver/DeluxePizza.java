@@ -9,12 +9,15 @@ public class DeluxePizza extends Pizza {
 //    }
 
 
-    public DeluxePizza(int price,Boolean isVeg) {
-        super(price,isVeg);
+    public DeluxePizza(Boolean isVeg) {
+        super(isVeg);
         // your code goes here
         this.addExtraCheese = false;
         this.addExtraTopping = false;
         this.totalPrice+=200;
+//        System.out.println("haii");
+//        System.out.println(totalPrice);
+//        System.out.println("hello");
     }
 }
 
