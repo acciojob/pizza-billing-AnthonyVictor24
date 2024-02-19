@@ -132,8 +132,8 @@ public class Pizza {
     private Boolean isVeg;
     private String bill;
     int totalPrice;
-    boolean addExtraCheese;
-    boolean addExtraTopping;
+    boolean isAddExtraCheese;
+    boolean isAddExtraTopping;
     boolean isTakeaway;
 //    boolean isDeluxe = true;
 
@@ -146,9 +146,9 @@ public class Pizza {
             this.price = 400;
         }
         this.totalPrice = price;
-        addExtraCheese = true;
-        addExtraTopping = true;
-        isTakeaway=true;
+        isAddExtraCheese = false;
+        isAddExtraTopping = false;
+        isTakeaway=false;
 
     }
 
@@ -159,29 +159,26 @@ public class Pizza {
 
     public void addExtraCheese(){
 
-        if(addExtraCheese == true){
+        if(isAddExtraCheese == false){
             totalPrice+=80;
-            addExtraCheese=false;
-//            isDeluxe = false;
+            isAddExtraCheese=true;
         }
     }
 
     public void addExtraToppings(){
-        if(addExtraTopping==true && isVeg==true){
+        if(isAddExtraTopping==false && isVeg==true){
             this.totalPrice+=70;
-//            isDeluxe = false;
-        }else if(addExtraTopping==true && isVeg==false){
+        }else if(isAddExtraTopping==false && isVeg==false){
             this.totalPrice+=120;
-//            isDeluxe = false;
         }
-        addExtraTopping=false;
+        isAddExtraTopping=true;
 
     }
 
     public void addTakeaway(){
-        if(isTakeaway == true){
+        if(isTakeaway == false){
             this.totalPrice+=20;
-            isTakeaway=false;
+            isTakeaway=true;
         }
     }
 
@@ -195,17 +192,17 @@ public class Pizza {
 
         }
 
-        if(!addExtraCheese ){
+        if(isAddExtraCheese == true ){
             sb.append("Extra Cheese Added: 80\n");
         }
 
-        if(isVeg && !addExtraTopping ){
+        if(isVeg && isAddExtraTopping == true ){
             sb.append("Extra Toppings Added: 70\n");
-        }else if(!isVeg && !addExtraTopping ){
+        }else if(!isVeg && isAddExtraTopping ==true ){
             sb.append("Extra Toppings Added: 120\n");
         }
 
-        if(!isTakeaway){
+        if(isTakeaway ==true){
             sb.append("Paperbag Added: 20\n");
         }
 
