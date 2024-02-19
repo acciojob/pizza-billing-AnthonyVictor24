@@ -26,9 +26,6 @@ public class Main {
     System.out.println(dp2.getPrice());
     System.out.println(dp2.getBill());
 
-
-
-
   }
 }
 
