@@ -6,7 +6,7 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-    int totalPrice;
+//    int totalPrice;
     boolean isAddExtraCheese;
     boolean isAddExtraTopping;
     boolean isTakeaway;
@@ -19,7 +19,7 @@ public class Pizza {
         }else if(isVeg == false) {
             this.price = 400;
         }
-        this.totalPrice = price;
+//        this.totalPrice = price;
         isAddExtraCheese = false;
         isAddExtraTopping = false;
         isTakeaway=false;
@@ -34,16 +34,19 @@ public class Pizza {
     public void addExtraCheese(){
 
         if(isAddExtraCheese == false){
-            totalPrice+=80;
+//            totalPrice+=80;
+            price+=80;
             isAddExtraCheese=true;
         }
     }
 
     public void addExtraToppings(){
         if(isAddExtraTopping==false && isVeg==true){
-            this.totalPrice+=70;
+//            this.totalPrice+=70;
+            price+=70;
         }else if(isAddExtraTopping==false && isVeg==false){
-            this.totalPrice+=120;
+//            this.totalPrice+=120;
+            price+=120;
         }
         isAddExtraTopping=true;
 
@@ -51,7 +54,8 @@ public class Pizza {
 
     public void addTakeaway(){
         if(isTakeaway == false){
-            this.totalPrice+=20;
+//            this.totalPrice+=20;
+            price+=20;
             isTakeaway=true;
         }
     }
@@ -60,9 +64,9 @@ public class Pizza {
         // your code goes here
         StringBuilder sb = new StringBuilder();
         if(isVeg){
-            sb.append("Base Price Of The Pizza: ").append(price).append("\n");
+            sb.append("Base Price Of The Pizza: ").append(300).append("\n");
         }else{
-            sb.append("Base Price Of The Pizza: ").append(price).append("\n");
+            sb.append("Base Price Of The Pizza: ").append(400).append("\n");
 
         }
 
@@ -80,7 +84,7 @@ public class Pizza {
             sb.append("Paperbag Added: 20\n");
         }
 
-        sb.append("Total Price: ").append(totalPrice).append("\n");
+        sb.append("Total Price: ").append(price).append("\n");
 
         return sb.toString();
     }
